@@ -6,7 +6,10 @@ def main() -> None:
     while True:
         timestamp = datetime.now()
         formatted_timestamp = timestamp.strftime("%Y-%m-%d %H:%M:%S")
-        filename = f"app-{timestamp.hour}_{timestamp.minute}_{timestamp.second}.log"
+        filename = (
+            f"app-{timestamp.hour}_{timestamp.minute}_"
+            f"{timestamp.second}.log"
+        )
 
         with open(filename, "w") as log_file:
             log_file.write(formatted_timestamp)
